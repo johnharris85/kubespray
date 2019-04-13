@@ -52,6 +52,11 @@ variable "aws_cidr_subnets_public" {
   type        = "list"
 }
 
+variable "aws_avail_zones" {
+  description = "AWS Availability Zones"
+  type        = "list"
+}
+
 //AWS EC2 Settings
 
 variable "aws_bastion_size" {
@@ -102,6 +107,9 @@ variable "k8s_secure_api_port" {
 variable "default_tags" {
   description = "Default tags for all resources"
   type        = "map"
+  default = {
+    "Terraform" = "terraform"
+  }
 }
 
 variable "inventory_file" {
